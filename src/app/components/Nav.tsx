@@ -1,7 +1,7 @@
 'use client';
-import Link from 'next/link'
-import { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import Link from 'next/link';
+import { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +9,7 @@ const Nav = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  }
+  };
 
   return (
     <nav className='flex items-center justify-between w-full mb-1 pt-3'>
@@ -60,8 +60,15 @@ const Nav = () => {
 
       {/* Mobile menu panel */}
       {isMenuOpen && (
-        <div className='absolute top-0 right-0 bg-white shadow-md p-6 w-3/4 h-screen sm:hidden'>
-          <div className='flex flex-col gap-4'>
+        <div className='fixed inset-0 bg-white shadow-md p-6 sm:hidden z-50'>
+          {/* Close button */}
+          <button 
+            onClick={toggleMenu} 
+            className='absolute top-4 right-4 text-3xl hover:rotate-90 transition-transform duration-300 ease-in-out'>
+            <FaTimes />
+          </button>
+          
+          <div className='flex flex-col gap-4 mt-12'>
             <Link href='/' className='' onClick={toggleMenu}>
               Home
             </Link>
@@ -90,6 +97,6 @@ const Nav = () => {
       )}
     </nav>
   );
-}
+};
 
 export default Nav;
