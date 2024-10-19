@@ -1,0 +1,13 @@
+@media (max-width: 640px) { /* For screens smaller than 640px (typical mobile) */
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .bg_img{
+        margin-top: 2rem;
+      }
+      .home_section{
+        margin-top: -9rem !important;
+      }
+}

@@ -41,7 +41,7 @@ export default function Home() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center home_section">
       {/* Text Section */}
       <div className="flex flex-col justify-center p-4">
         <h3 className="head_text text-left green_gradient">

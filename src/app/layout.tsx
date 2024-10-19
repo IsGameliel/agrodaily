@@ -1,5 +1,8 @@
 import React, { ReactNode } from 'react';
 import '@styles/globals.css';
+import '@styles/mobile.css';
+import Link from 'next/link';
+import Nav from './components/Nav';
 
 export const metadata = {
   title: 'Agrodaily',
@@ -18,10 +21,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="bg-gradient">
-        <nav>
-          {/* Your navigation content here */}
-        </nav>
         <main>
+          <Nav />
           {children}
         </main>
       </body>

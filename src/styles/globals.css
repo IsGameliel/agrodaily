@@ -60,3 +60,6 @@ body {
 .bg_img{
   margin-top: 10rem;
 }
+.logo{
+  @apply text-lg font-bold;
+}
