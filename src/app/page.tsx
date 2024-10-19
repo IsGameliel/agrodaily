@@ -14,7 +14,7 @@ export default function Home() {
   const slidesContent = [
     {
       title: "Discover and Share",
-      description: "Welcome to AgroDaily, your all-in-one AI-powered agricultural app. Our integrated e-commerce platform allows farmers to easily buy and sell quality products, while our community forum fosters collaboration and knowledge sharing.",
+      description: "Welcome to AgroDaily, your all-in-one AI-powered agricultural app. Our integrated e-commerce platform allows farmers to easily buy and sell quality products.",
       buttonText: "Get started",
       image: "/assets/img/bg.jpg",
     },
