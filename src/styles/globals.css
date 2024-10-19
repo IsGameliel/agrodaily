@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: linear-gradient(to right, #ffffff, #add8e6, #bccebc, #edf3ed);
+  --foreground: #171717;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(to right, #ffffff, #90ee90);
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.head_text {
+  @apply mt-48 text-lg font-extrabold leading-[1.15] text-black sm:text-6xl;
+}
+
+.green_gradient {
+  @apply bg-gradient-to-r 
+  from-amber-600 
+  via-yellow-400 
+  via-green-500 
+  to-teal-400;
+  @apply bg-clip-text text-transparent;
+}
+.desc{
+  @apply mt-5 text-gray-500;
+  margin-bottom: 33px;
+}
+.button {
+  @apply px-8 py-3 text-white font-bold rounded-lg;
+  background: var(--background);
+  border: 1px solid gray;
+  margin: 0 auto;
+}
+.button:hover {
+  transition-duration: 2s;
+  background: linear-gradient(to right, #add8e6, #bccebc, #ffffff, #edf3ed);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: var(--foreground);
+}
+.bg_img{
+  margin-top: 10rem;
+}

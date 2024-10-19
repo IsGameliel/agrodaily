@@ -1,101 +1,82 @@
-import Image from "next/image";
+'use client'; // Ensure this is a client component
+import { useState } from 'react';
+import 'swiper/css'; // Core Swiper styles
+import 'swiper/css/pagination'; // Pagination module styles
+import 'swiper/css/autoplay'; // Autoplay module styles
+import Image from 'next/image';
+
+// Import Swiper and SwiperSlide components directly
+import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper and SwiperSlide
+import { Autoplay } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const slidesContent = [
+    {
+      title: "Discover and Share",
+      description: "Welcome to AgroDaily, your all-in-one AI-powered agricultural app. Our integrated e-commerce platform allows farmers to easily buy and sell quality products, while our community forum fosters collaboration and knowledge sharing.",
+      buttonText: "Get started",
+      image: "/assets/img/bg.jpg",
+    },
+    {
+      title: "Connect with Experts",
+      description: "Join a vibrant community of agricultural experts and farmers to share knowledge and get real-time advice to improve your farm practices.",
+      buttonText: "Join the Forum",
+      image: "/assets/img/bg2.jpg",
+    },
+    {
+      title: "AI-Powered Insights",
+      description: "Leverage the power of AI to receive personalized insights and recommendations based on your farm data and environmental conditions.",
+      buttonText: "Explore AI Tools",
+      image: "/assets/img/bg3.jpg",
+    },
+    {
+      title: "Shop and Sell",
+      description: "Access an integrated marketplace to buy and sell agricultural products seamlessly. Reach a broader market with AgroDaily.",
+      buttonText: "Visit Marketplace",
+      image: "/assets/img/bg4.jpg",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+  return (
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+      {/* Text Section */}
+      <div className="flex flex-col justify-center p-4">
+        <h3 className="head_text text-left green_gradient">
+          {slidesContent[activeSlideIndex].title}
+        </h3>
+        <p className="desc text-left">
+          {slidesContent[activeSlideIndex].description}
+        </p>
+        <a href="#" className="button mt-4">{slidesContent[activeSlideIndex].buttonText}</a>
+      </div>
+
+      {/* Swiper Carousel */}
+      <div className="flex justify-center p-4">
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }} // Enable autoplay
+          pagination={{ clickable: true }} // Enable pagination
+          onSlideChange={(swiper) => setActiveSlideIndex(swiper.realIndex)}
+          modules={[Autoplay, Pagination]} // Register modules
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          {slidesContent.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                width={500}
+                height={300}
+                className="rounded-md bg_img"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
   );
 }
