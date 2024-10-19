@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import '@styles/globals.css';
 import '@styles/mobile.css';
-import Link from 'next/link';
 import Nav from './components/Nav';
 
 export const metadata = {
