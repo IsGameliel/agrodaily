@@ -1,13 +1,36 @@
 @media (max-width: 640px) { /* For screens smaller than 640px (typical mobile) */
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    :root {
+    --background: linear-gradient(to right, #ffffff, #add8e6, #bccebc, #edf3ed);
+    --foreground: #171717;
+
+    }
+    
     body {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
     .bg_img{
-        margin-top: 3rem;
+        margin-top: 1.3rem;
       }
       .home_section{
-        margin-top: -9rem !important;
+        margin-top: -10rem !important;
+      }
+      .desc{
+        @apply mt-5 text-gray-500;
+        margin-bottom: 30px;
+        font-size: 12px !important;
+      }
+      .button {
+        @apply px-5 py-2 font-bold rounded-lg;
+        background: var(--background);
+        border: 1px solid gray;
+        margin: 0 auto;
+        font-size: 13px;
+        color: var(--foreground);
       }
 }
