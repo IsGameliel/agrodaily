@@ -1,12 +1,16 @@
-import React from 'react';
-import '@styles/globals.css'
+import React, { ReactNode } from 'react';
+import '@styles/globals.css';
 
 export const metadata = {
   title: 'Agrodaily',
-  description: 'The new tech in agriculture'
+  description: 'The new tech in agriculture',
+};
+
+interface LayoutProps {
+  children: ReactNode; // Define the type for children
 }
 
-const Layout = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <head>
@@ -15,7 +19,7 @@ const Layout = ({ children }) => {
       </head>
       <body className="bg-gradient">
         <nav>
-          
+          {/* Your navigation content here */}
         </nav>
         <main>
           {children}
