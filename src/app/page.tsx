@@ -59,7 +59,7 @@ export default function Home() {
           spaceBetween={30}
           slidesPerView={1}
           loop={true}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // Enable autoplay
+          autoplay={{ delay: 5000, disableOnInteraction: false }} // Enable autoplay
           pagination={{ clickable: true }} // Enable pagination
           onSlideChange={(swiper) => setActiveSlideIndex(swiper.realIndex)}
           modules={[Autoplay, Pagination]} // Register modules

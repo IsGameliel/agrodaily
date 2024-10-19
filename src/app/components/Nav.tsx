@@ -29,10 +29,19 @@ const Nav = () => {
       <div className='hidden sm:flex flex-1 justify-center'>
         <div className='flex gap-5'>
           <Link href='/' className=''>
-            Home
+            Product
+          </Link>
+          <Link href='/market' className=''>
+            Market place
+          </Link>
+          <Link href='/community' className=''>
+            Community
           </Link>
           <Link href='/resources' className=''>
             Resources
+          </Link>
+          <Link href='/pricing' className=''>
+            Pricing
           </Link>
           <Link href='/contact' className=''>
             Contact
@@ -43,15 +52,15 @@ const Nav = () => {
       {/* Sign In/Sign Up on the right (desktop) */}
       <div className='hidden sm:flex gap-5'>
         {isUserLoggedIn ? (
-          <Link href='/profile' className=''>
+          <Link href='/profile' className='auth_btn'>
             Profile
           </Link>
         ) : (
           <>
-            <Link href='/signin' className=''>
+            <Link href='/signin' className='auth_btn'>
               Sign In
             </Link>
-            <Link href='/signup' className=''>
+            <Link href='/signup' className='auth_btn'>
               Sign Up
             </Link>
           </>
@@ -70,24 +79,33 @@ const Nav = () => {
           
           <div className='flex flex-col gap-4 mt-12'>
             <Link href='/' className='' onClick={toggleMenu}>
-              Home
+              Products
+            </Link>
+            <Link href='/market' className='' onClick={toggleMenu}>
+              Market place
+            </Link>
+            <Link href='/community' className='' onClick={toggleMenu}>
+              Community
             </Link>
             <Link href='/resources' className='' onClick={toggleMenu}>
               Resources
+            </Link>
+            <Link href='/pricing' className='' onClick={toggleMenu}>
+              Pricing
             </Link>
             <Link href='/contact' className='' onClick={toggleMenu}>
               Contact
             </Link>
             {isUserLoggedIn ? (
-              <Link href='/profile' className='' onClick={toggleMenu}>
+              <Link href='/profile' className='auth_btn' onClick={toggleMenu}>
                 Profile
               </Link>
             ) : (
               <>
-                <Link href='/signin' className='' onClick={toggleMenu}>
+                <Link href='/signin' className='auth_btn' onClick={toggleMenu}>
                   Sign In
                 </Link>
-                <Link href='/signup' className='' onClick={toggleMenu}>
+                <Link href='/signup' className='auth_btn' onClick={toggleMenu}>
                   Sign Up
                 </Link>
               </>

@@ -27,7 +27,7 @@
       }
       .button {
         @apply px-5 py-2 font-bold rounded-lg;
-        background: var(--background);
+        background: var(--foreground);
         border: 1px solid gray;
         margin: 0 auto;
         font-size: 13px;
