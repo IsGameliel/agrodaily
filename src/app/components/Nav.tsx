@@ -69,7 +69,7 @@ const Nav = () => {
 
       {/* Mobile menu panel */}
       {isMenuOpen && (
-        <div className='fixed inset-0 bg-white shadow-md p-6 sm:hidden z-50'>
+        <div className='fixed inset-0 bg-white shadow-md p-6 sm:hidden z-50 mobile_menu'>
           {/* Close button */}
           <button 
             onClick={toggleMenu} 
@@ -77,7 +77,7 @@ const Nav = () => {
             <FaTimes />
           </button>
           
-          <div className='flex flex-col gap-4 mt-12'>
+          <div className='flex flex-col gap-4 mt-12 mobile_menu'>
             <Link href='/' className='' onClick={toggleMenu}>
               Products
             </Link>
