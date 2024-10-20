@@ -104,3 +104,27 @@ body::before {
 .swiper-pagination{
   margin-bottom: 12rem !important;
 }
+/* styles/globals.css */
+
+.signin-body {
+  background: var(--background) !important;
+}
+
+.signin-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* Adjust the opacity as needed */
+  z-index: -1;
+}
+
+.signin-container {
+  max-width: 400px; /* Limit the width */
+  margin: auto; /* Center the container */
+  padding: 20px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+}

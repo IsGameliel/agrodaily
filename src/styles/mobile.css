@@ -50,4 +50,16 @@
       .mobile_menu{
         color: var(--foreground) !important;
       }
+      .auth_head{
+        font-size: 19px;
+      }
+      .auth_desc{
+        font-size: 14px;
+      }
+      .auth_formc{
+        margin-top: -8px;
+      }
+      form{
+        margin-top: -23px;
+      }
 }
