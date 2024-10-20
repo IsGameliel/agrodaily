@@ -88,6 +88,15 @@ body::before {
   border: 1px solid gray;
   margin: 0 auto; 
 }
+
+.auth_btn:hover{
+  @apply px-5 py-3 font-bold rounded-lg;
+  background: var(--background);
+  border: 1px solid gray;
+  margin: 0 auto; 
+  color: var(--foreground)
+}
+
 .home_section{
   margin-top: -10rem !important;
 }

@@ -1,5 +1,4 @@
 'use client'; // Ensure this is a client component
-import { useState } from 'react';
 import 'swiper/css'; // Core Swiper styles
 import 'swiper/css/pagination'; // Pagination module styles
 import 'swiper/css/autoplay'; // Autoplay module styles
