@@ -15,11 +15,30 @@
   }
 }
 
-body {
+/* body {
   color: var(--foreground);
   background: var(--background);
   padding-left: 5rem;
   padding-right: 5rem;
+} */
+
+body {
+  color: white;
+  background-image: url('../../public/assets/img/grow.jpg');
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+  z-index: -1; /* Keep the overlay behind content */
 }
 
 
@@ -42,7 +61,7 @@ body {
   @apply bg-clip-text text-transparent;
 }
 .desc{
-  @apply mt-5 text-gray-500;
+  @apply mt-5 text-white;
   margin-bottom: 33px;
 }
 .button {
@@ -68,4 +87,11 @@ body {
   background: var(--foreground);
   border: 1px solid gray;
   margin: 0 auto; 
+}
+.home_section{
+  margin-top: -10rem !important;
+}
+
+.swiper-pagination{
+  margin-bottom: 12rem !important;
 }

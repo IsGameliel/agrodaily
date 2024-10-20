@@ -9,21 +9,36 @@
 
     }
     
-    body {
+    /* body {
         padding-left: 1rem;
         padding-right: 1rem;
+    } */
+    body {
+      color: white;
+      background-image: url('../../public/assets/img/mobile_bg.jpg');
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
-
-    .bg_img{
-        margin-top: 1.3rem;
-      }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+      z-index: -1; /* Keep the overlay behind content */
+    }
+    
       .home_section{
         margin-top: -10rem !important;
       }
       .desc{
-        @apply mt-5 text-gray-500;
+        @apply mt-5 text-white;
         margin-bottom: 30px;
-        font-size: 12px !important;
+        font-size: 15px !important;
       }
       .button {
         @apply px-5 py-2 text-white font-bold rounded-lg;
